@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import CountUp from 'react-countup'
 
 
 function DataFetching() {
     const [posts, setPosts] = useState([])
     
+    
+
     
     useEffect(() => {
         axios.get('https://ape-swap-api.herokuapp.com/stats')
@@ -18,21 +21,61 @@ function DataFetching() {
             
     }, [])
     
-      
+    
     return (
         
-        <div>
-                <div>
-                    <br />
+        <div className="stats">
+                <img src="https://apeswap.finance/images/ape-banana-frenzy-summer.svg" className="App-logo" alt="logo" />
+                <div style={{ paddingTop: 50 }}>
+                          
+                    <p>Banana Price</p>
+
+                    <CountUp 
+                        className="count"
+                        start={0}
+                        end={posts.bananaPrice > 0 ? posts.bananaPrice : 12}
+                        duration={2.75}
+                        separator=" "
+                        decimals={3}
+                        decimal=","
+                        prefix="$"
+  
+                    />
+
+                    <p>Gnana  Value</p>
+
+                    <CountUp
+                        start={0}
+                        end={posts.bananaPrice > 0 ? posts.bananaPrice * 1.389 : 12}
+                        duration={2.75}
+                        separator=" "
+                        decimals={3}
+                        decimal=","
+                        prefix="$"
+  
+                    />
+
+                    <p>Market Cap</p>
+
+                    <CountUp
+                        start={0}
+                        end={posts.marketCap > 0 ? posts.marketCap : 250000000}
+                        duration={2.75}
+                        separator=" "
+                        decimals={3}
+                        decimal=","
+                        prefix="$"
+  
+                    />
+                    <p>_________________________________</p>
+                    <p className="update">Last Update : {posts.marketCap > 0 ? posts.createdAt.split("T")[0] + " " + posts.createdAt.substr(11, 18).split(".")[0] + " UTC": '0000-00-00 00:00:00'}</p>
+                    
+                    
+
                 </div>
-                <div>
-                            
-                    <p>Banana Price: ${posts.bananaPrice > 0 ? posts.bananaPrice.toFixed(3) : ' Loading...'}</p> 
-                    <p>Gnana  Value: ${posts.bananaPrice > 0 ? (posts.bananaPrice * 1.389).toFixed(3) : ' Loading...'}</p>
-                    <p>Market Cap  : ${posts.marketCap > 0 ? posts.marketCap.toLocaleString() : ' Loading...'}</p>
-                    <p className="update">Last Update : {posts.marketCap > 0 ? posts.createdAt.split("T")[0] + " " + posts.createdAt.substr(11, 18).split(".")[0] + " UTC": ' Loading...'}</p>
-                  
-                </div>
+
+                
+
         </div>
         
     )
