@@ -3,6 +3,7 @@ import axios from 'axios'
 import CountUp from 'react-countup'
 
 
+
 function DataFetching() {
     const [posts, setPosts] = useState([])
     
@@ -26,12 +27,12 @@ function DataFetching() {
         
         <div className="stats">
                 <img src="https://apeswap.finance/images/ape-banana-frenzy-summer.svg" className="App-logo" alt="logo" />
-                <div style={{ paddingTop: 50 }}>
+                <div>
                           
                     <p>Banana Price</p>
 
                     <CountUp 
-                        className="count"
+                        className="newCs"
                         start={0}
                         end={posts.bananaPrice > 0 ? posts.bananaPrice : 12}
                         duration={2.75}
@@ -68,7 +69,7 @@ function DataFetching() {
   
                     />
                     <p>_________________________________</p>
-                    <p className="update">Last Update : {posts.marketCap > 0 ? posts.createdAt.split("T")[0] + " " + posts.createdAt.substr(11, 18).split(".")[0] + " UTC": '0000-00-00 00:00:00'}</p>
+                    <p style={{color: "#38a611", fontSize: 12}}>Last Update : {posts.marketCap > 0 ? posts.createdAt.split("T")[0] + " " + posts.createdAt.substr(11, 18).split(".")[0] + " UTC": '0000-00-00 00:00:00'}</p>
                     
                     
 

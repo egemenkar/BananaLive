@@ -1,19 +1,25 @@
 .App {
   text-align: center;
   font-family: "Titan One", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
   
 }
 
 .App-logo {
-  height: 30vmin;
+  height: 50vmin;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/*@media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 10s linear;
   }
-}
+}*/
 
 .App-header {
   background-color: #000000;
@@ -31,10 +37,6 @@
   color: #61dafb;
 }
 
-.update {
-  color: rgb(56, 166, 17);
-  font-size: calc(3px + 2vmin);
-}
 
 
 
@@ -46,7 +48,6 @@
   box-shadow: rgb(25 19 38 / 10%) 0px 2px 12px -8px, rgb(25 19 38 / 5%) 0px 1px 1px; 
   padding: 50px;
   padding-bottom: 5px;
-    
 }
 
 p {
@@ -54,13 +55,19 @@ p {
   color: rgb(255, 179, 0);
 }
 
+.newCs {
+  font-size: calc(50px + 2vmin);
+  color: white;
+  
+}
 
 
-@keyframes App-logo-spin {
+
+/*@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
-}
+}*/
