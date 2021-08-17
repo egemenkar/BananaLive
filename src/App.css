@@ -6,6 +6,7 @@
   align-items: stretch;
   justify-content: center;
   
+  
 }
 
 .App-logo {
@@ -13,6 +14,18 @@
   pointer-events: none;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .App-logo {
+    height: 40vmin;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .App-logo {
+    height: 30vmin;
+  }
 }
 
 /*@media (prefers-reduced-motion: no-preference) {
@@ -30,6 +43,7 @@
   justify-content: center;
   font-size: calc(17px + 2vmin);
   color: white;
+
   
 }
 
